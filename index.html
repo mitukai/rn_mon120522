@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sample</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 80% 20%,
+            #e9ddff 0%,
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 15% 90%,
+            #eee7ff 0%,
+            transparent 45%
+        ),
+        #ffffff;
+}
+
+/* 背景の装飾 */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(202, 180, 255, 0.25);
+    filter: blur(1px);
+}
+
+.circle.one {
+    width: 330px;
+    height: 330px;
+    top: -130px;
+    right: -70px;
+}
+
+.circle.two {
+    width: 240px;
+    height: 240px;
+    bottom: -100px;
+    left: -60px;
+}
+
+/* メインテキスト */
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: clamp(65px, 13vw, 150px);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: #b49add;
+    text-transform: lowercase;
+    animation: appear 1.2s ease forwards;
+}
+
+/* 装飾ライン */
+.line {
+    width: 65px;
+    height: 2px;
+    background: #cbb5ee;
+    margin: 30px auto 0;
+    border-radius: 10px;
+}
+
+/* 四角形のアクセント */
+.square {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border: 1px solid rgba(180, 154, 221, 0.4);
+    transform: rotate(45deg);
+    top: 20%;
+    left: 16%;
+}
+
+.square.second {
+    width: 45px;
+    height: 45px;
+    top: auto;
+    left: auto;
+    right: 18%;
+    bottom: 19%;
+    background: rgba(225, 213, 246, 0.3);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+    <main class="main">
+        <div class="circle one"></div>
+        <div class="circle two"></div>
+
+        <div class="square"></div>
+        <div class="square second"></div>
+
+        <div class="content">
+            <h1>sample</h1>
+            <div class="line"></div>
+        </div>
+    </main>
+</body>
+</html>
